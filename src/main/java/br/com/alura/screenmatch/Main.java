@@ -12,16 +12,14 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
 
         String baseURL = "https://www.omdbapi.com/?t=%s&apikey=358d9190";
-        String nomeTitulo = "os+fantasmas+se+divertem";
+        String nomeTitulo = "top gun";
 
-        String uriFormatada = String.format(baseURL, nomeTitulo);
+        String uriFormatada = String.format(baseURL, nomeTitulo.replace(" ", "+"));
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(uriFormatada))
