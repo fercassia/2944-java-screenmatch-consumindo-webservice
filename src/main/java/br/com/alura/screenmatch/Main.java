@@ -19,7 +19,7 @@ public class Main {
         HttpClient client = HttpClient.newHttpClient();
 
         String baseURL = "https://www.omdbapi.com/?t=%s&apikey=358d9190";
-        String nomeTitulo = "matrix";
+        String nomeTitulo = "os+fantasmas+se+divertem";
 
         String uriFormatada = String.format(baseURL, nomeTitulo);
 
