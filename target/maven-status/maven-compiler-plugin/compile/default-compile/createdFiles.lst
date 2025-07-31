@@ -1,0 +1,8 @@
+br/com/alura/screenmatch/modelos/Titulo.class
+br/com/alura/screenmatch/calculos/FiltroRecomendacao.class
+br/com/alura/screenmatch/calculos/CalculadoraDeTempo.class
+br/com/alura/screenmatch/modelos/Filme.class
+br/com/alura/screenmatch/modelos/Episodio.class
+br/com/alura/screenmatch/modelos/Serie.class
+br/com/alura/screenmatch/calculos/Classificavel.class
+br/com/alura/screenmatch/Main.class
