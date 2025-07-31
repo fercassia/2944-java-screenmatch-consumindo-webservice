@@ -13,30 +13,30 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
-        HttpClient client = HttpClient.newHttpClient();
+  public static void main(String[] args) throws IOException, InterruptedException {
+    HttpClient client = HttpClient.newHttpClient();
 
-        String baseURL = "https://www.omdbapi.com/?t=%s&apikey=358d9190";
-        String nomeTitulo = "top gun";
+    String baseURL = "https://www.omdbapi.com/?t=%s&apikey=358d9190";
+    String nomeTitulo = "top gun";
 
-        String uriFormatada = String.format(baseURL, nomeTitulo.replace(" ", "+"));
+    String uriFormatada = String.format(baseURL, nomeTitulo.replace(" ", "+"));
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(uriFormatada))
-                .build();
+    HttpRequest request = HttpRequest.newBuilder()
+        .uri(URI.create(uriFormatada))
+        .build();
 
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
+    HttpResponse<String> response = client
+        .send(request, HttpResponse.BodyHandlers.ofString());
 
-        String json = response.body();
+    String json = response.body();
 
 
-        Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .create();
-        TituloOmdb meuTitulo = gson.fromJson(json, TituloOmdb.class);
+    Gson gson = new GsonBuilder()
+        .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+        .create();
+    TituloOmdb meuTitulo = gson.fromJson(json, TituloOmdb.class);
 
-        Titulo tituloRecebido = new Titulo(meuTitulo);
-        System.out.println(tituloRecebido);
-    }
+    Titulo tituloRecebido = new Titulo(meuTitulo);
+    System.out.println(tituloRecebido);
+  }
 }
